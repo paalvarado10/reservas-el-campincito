@@ -11,7 +11,7 @@ const Type = require('./models/Type');
 const isDev = process.env.URL;
 const port = process.env.PORT || 5000;
 //Set up Mongoose
-mongoose.connect(isDev ? config.db_dev : config.db);
+mongoose.connect(config.db);
 mongoose.Promise = global.Promise;
 // Serve static files from the React app
 const app = express();
@@ -573,7 +573,7 @@ app.get('/api/passwords', (req, res) => {
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname+'/client/build/index.html'));
+  res.sendFile(path.join(__dirname+'/client/public/index.html'));
 });
 
 app.listen(port);
