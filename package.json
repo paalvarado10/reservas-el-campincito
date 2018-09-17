@@ -13,6 +13,9 @@
     "mongoose": "^5.2.15",
     "password-generator": "^2.2.0"
   },
+    "engines": {
+    "node": "9.3.0"
+  },
   "scripts": {
     "start": "node index.js",
     "heroku-postbuild": "cd client && npm install && npm run build"
