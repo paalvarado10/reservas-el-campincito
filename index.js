@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require('express');
 const path = require('path');
 const generatePassword = require('password-generator');
@@ -7,7 +8,7 @@ const Appointment = require('./models/Appointment');
 const User = require('./models/User');
 const UserSession = require('./models/UserSession');
 const Type = require('./models/Type');
-const isDev = process.env.NODE_ENV !== 'production';
+const isDev = process.env.URL;
 const port = process.env.PORT || 5000;
 //Set up Mongoose
 mongoose.connect(isDev ? config.db_dev : config.db);
