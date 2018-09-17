@@ -7,11 +7,13 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
+    "bcrypt": "^3.0.0",
     "express": "^4.16.3",
+    "mongoose": "^5.2.15",
     "password-generator": "^2.2.0"
   },
   "scripts": {
-  "start": "node index.js",
-  "heroku-postbuild": "cd client && yarn && yarn run build"
-}
+    "start": "node index.js",
+    "heroku-postbuild": "cd client && yarn && yarn run build"
+  }
 }
