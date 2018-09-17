@@ -3,7 +3,7 @@ import 'whatwg-fetch';
 import { getFromStorage, setInStorage } from './utils/storage';
 import SignIn from './log/SignIn';
 import SignUp from './log/SignUp';
-//import Appointment from '../Appointment/Appointment';
+import Appointment from './Appointment/Appointment';
 import Block from './muestra/Block';
 //import SetSchedule from'../Schedule/SetSchedule';
 
@@ -140,7 +140,7 @@ class Home extends Component {
             
           </div>
           <div className="col-sm-4">
-          <button type="button" class="btn btn-outline-dark btn-lg">Mis Citas</button>
+          <button type="button" className="btn btn-outline-dark btn-lg">Mis Citas</button>
           </div>
         </div>
         );
@@ -219,7 +219,7 @@ class Home extends Component {
             </div>
           </div>
         </div>
-        {/*<Appointment emailUsuario={this.state.email}/>*/}
+        <Appointment emailUsuario={this.state.email}/>
       </div>
     );
 
@@ -245,7 +245,7 @@ class Home extends Component {
             </div>
           </div>
         </div>
-      {/*<Appointment/>*/}  
+      <Appointment/>  
       </div>
     );
   }
