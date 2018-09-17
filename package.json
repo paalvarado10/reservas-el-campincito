@@ -1,0 +1,17 @@
+{
+  "name": "reservasBack",
+  "version": "1.0.0",
+  "description": "sitio de reservas",
+  "main": "index.js",
+  "author": "Pablo Alvarado",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "express": "^4.16.3",
+    "password-generator": "^2.2.0"
+  },
+  "scripts": {
+  "start": "node index.js",
+  "heroku-postbuild": "cd client && yarn && yarn run build"
+}
+}
