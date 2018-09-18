@@ -7,6 +7,7 @@ const User = require('./models/User');
 const UserSession = require('./models/UserSession');
 const Type = require('./models/Type');
 const Schedule = require('./models/Schedule');
+var dir = require('path');
 const url = process.env.URL;
 mongoose.connect(url);
 mongoose.Promise = global.Promise;
@@ -759,7 +760,15 @@ app.delete('/schedule/remove', (req, res, next) => {
 
 
 app.get('/*', function(req, res) {
-    res.sendFile('/client/public/index.html');
+ var ruta = dir.split('/');
+  let r ='';
+  ruta.map((n,i)=>{
+    if(i<=ruta.length-2){
+      let folder = "/"+n;
+      r.concat(folder);
+    }
+  });
+    res.sendFile(r+'/client/public/index.html');
 })
 
 module.exports = app;
