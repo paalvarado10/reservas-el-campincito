@@ -758,9 +758,6 @@ app.delete('/schedule/remove', (req, res, next) => {
 
 
 
-/* GET home page. */
-app.get('*', function(req, res, next) {
-  res.render('index', { title: 'Holi' });
-});
+
 
 module.exports = app;
