@@ -1,24 +1,14 @@
-require("dotenv").config();
-const express = require('express');
-const path = require('path');
-const generatePassword = require('password-generator');
-const config = require('./config/config');
+var express = require('express');
+var app = express.Router();
+const config = require('../config/config');
 const mongoose = require('mongoose');
 const Appointment = require('./models/Appointment');
 const User = require('./models/User');
 const UserSession = require('./models/UserSession');
 const Type = require('./models/Type');
-const isDev = process.env.URL;
-const port = process.env.PORT || 5000;
-//Set up Mongoose
+
 mongoose.connect(config.db);
 mongoose.Promise = global.Promise;
-// Serve static files from the React app
-const app = express();
-app.use(express.static(path.join(__dirname, 'client/build')));
-//
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
 
 // **********************METODO TYPE ******************************************************
 app.get('/types', (req,res)=>{
@@ -556,26 +546,11 @@ app.post('/api/appointment/create', (req, res, next) => {
 // **********************FIN METODOS APPOINTMENT******************************************************
 
 
-app.get('/api/passwords', (req, res) => {
-  const count = 5;
 
-  // Generate some passwords
-  const passwords = Array.from(Array(count).keys()).map(i =>
-    generatePassword(12, false)
-  )
 
-  // Return them as json
-  res.json(passwords);
-
-  console.log(`Sent ${count} passwords`);
+/* GET home page. */
+app.get('/', function(req, res, next) {
+  res.render('index', { title: 'Holi' });
 });
 
-// The "catchall" handler: for any request that doesn't
-// match one above, send back React's index.html file.
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname+'/client/public/index.html'));
-});
-
-app.listen(port);
-
-console.log(`Password generator listening on ${port}`);
+module.exports = app;
