@@ -757,19 +757,9 @@ app.delete('/schedule/remove', (req, res, next) => {
 	});
 });
 
-
-
-app.get('/*', function(req, res) {
-  dir = dir+" ";
- var ruta = dir.split('/');
-  let r ='';
-  ruta.map((n,i)=>{
-    if(i<=ruta.length-2){
-      let folder = "/"+n;
-      r.concat(folder);
-    }
-  });
-    res.sendFile(r+'/client/public/index.html');
+app.get("/*", function (req, res) {
+    res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
 })
+
 
 module.exports = app;
