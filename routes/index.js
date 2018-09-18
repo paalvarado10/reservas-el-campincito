@@ -7,7 +7,7 @@ const User = require('./models/User');
 const UserSession = require('./models/UserSession');
 const Type = require('./models/Type');
 const Schedule = require('./models/Schedule');
-var dir = require('path');
+var path = require('path');
 const url = process.env.URL;
 mongoose.connect(url);
 mongoose.Promise = global.Promise;
