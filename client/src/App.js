@@ -5,7 +5,7 @@ import SignIn from './log/SignIn';
 import SignUp from './log/SignUp';
 import Appointment from './Appointment/Appointment';
 import Block from './muestra/Block';
-//import SetSchedule from'../Schedule/SetSchedule';
+import SetSchedule from'./Schedule/SetSchedule';
 
 
 class Home extends Component {
@@ -139,9 +139,6 @@ class Home extends Component {
               </div>
             
           </div>
-          <div className="col-sm-4">
-          <button type="button" className="btn btn-outline-dark btn-lg">Mis Citas</button>
-          </div>
         </div>
         );
     }
@@ -171,7 +168,7 @@ class Home extends Component {
           <div className="col-sm-1"></div>
           <div className="col-sm-6">        
           <h3>Registro de Horario Masajistas</h3>
-       {/* <SetSchedule emailUsuario={this.state.email}/>*/}
+        <SetSchedule emailUsuario={this.state.email}/>
         </div>
           <div className="col-sm-1"></div>
           <div className="col-sm-4">

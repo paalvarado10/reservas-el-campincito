@@ -13,7 +13,7 @@ const AppointmentSchema = new mongoose.Schema({
 		default: ''		
 	},
 	day: {
-		type: Date,
+		type: String,
 		default: ''		
 	},
 	startHour: {

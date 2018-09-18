@@ -3,7 +3,7 @@ import AppointmentMPerson from './AppointmentMPerson';
 import AppointmentType from './AppointmentType';
 import AppointmentDay from './AppointmentDay';
 import AppointmentHour from './AppointmentHour';
-//import ScheduleList from '../Schedule/ScheduleList';
+import ScheduleList from '../Schedule/ScheduleList';
 import { getFromStorage, setInStorage } from '../utils/storage';
 
 
@@ -139,7 +139,7 @@ class Appointment extends Component {
    					<div className="col-sm-6">
    						<h2>Agende su cita</h2>
    						<h3>Dia: {dia[0]} lista horarios</h3>
-   						{/*<ScheduleList horarios={horarios}*/}
+   						<ScheduleList horarios={horarios}
    						selectType={this.selectType}
    						/>
    					</div>
