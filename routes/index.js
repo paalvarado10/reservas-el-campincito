@@ -1,7 +1,6 @@
 require("dotenv").config();
 var express = require('express');
 var app = express.Router();
-//const config = require('../config/config');
 const mongoose = require('mongoose');
 const Appointment = require('./models/Appointment');
 const User = require('./models/User');
@@ -9,7 +8,7 @@ const UserSession = require('./models/UserSession');
 const Type = require('./models/Type');
 const Schedule = require('./models/Schedule');
 const url = process.env.URL;
-mongoose.connect(URL);
+mongoose.connect(url);
 mongoose.Promise = global.Promise;
 
 // **********************METODO TYPE ******************************************************
