@@ -8,6 +8,7 @@
   "private": false,
   "dependencies": {
     "bcrypt": "^3.0.0",
+    "morgan": "~1.9.0",
     "cookie-parser": "^1.4.3",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
@@ -15,8 +16,14 @@
     "password-generator": "^2.2.0",
     "pug": "^2.0.3"
   },
-  "engines": {
-    "node": "9.3.0"
+ "engines": {
+  "node": "9.3.0",
+  "npm": "5.5.1"
+},
+"description": "Aplicacion para la reserva de citas en el spa el campincito",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paalvarado10/reservas-el-campincito.git"
   },
   "scripts": {
     "start": "node ./bin/www",
