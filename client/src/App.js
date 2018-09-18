@@ -8,7 +8,7 @@ import Block from './muestra/Block';
 import SetSchedule from'./Schedule/SetSchedule';
 
 
-class Home extends Component {
+class App extends Component {
   constructor(props) {
     super(props);
 
