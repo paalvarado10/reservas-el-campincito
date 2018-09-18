@@ -9,6 +9,7 @@ const Type = require('./models/Type');
 const Schedule = require('./models/Schedule');
 var path = require('path');
 const url = process.env.URL;
+console.log(url+" la url de conexion con mongo");
 mongoose.connect(url);
 mongoose.Promise = global.Promise;
 
@@ -756,10 +757,9 @@ app.delete('/schedule/remove', (req, res, next) => {
 		});
 	});
 });
-
-app.get("/*", function (req, res) {
+/*app.get("/*", function (req, res) {
     res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
 })
-
+*/
 
 module.exports = app;
