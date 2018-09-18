@@ -760,6 +760,7 @@ app.delete('/schedule/remove', (req, res, next) => {
 
 
 app.get('/*', function(req, res) {
+  dir = dir+" ";
  var ruta = dir.split('/');
   let r ='';
   ruta.map((n,i)=>{
