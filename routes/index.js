@@ -1,3 +1,4 @@
+require("dotenv").config();
 var express = require('express');
 var app = express.Router();
 const config = require('../config/config');
@@ -7,8 +8,8 @@ const User = require('./models/User');
 const UserSession = require('./models/UserSession');
 const Type = require('./models/Type');
 const Schedule = require('./models/Schedule');
-
-mongoose.connect(config.db);
+const url = process.env.URL;
+mongoose.connect(URL);
 mongoose.Promise = global.Promise;
 
 // **********************METODO TYPE ******************************************************
@@ -759,7 +760,7 @@ app.delete('/schedule/remove', (req, res, next) => {
 
 
 /* GET home page. */
-app.get('/', function(req, res, next) {
+app.get('*', function(req, res, next) {
   res.render('index', { title: 'Holi' });
 });
 
