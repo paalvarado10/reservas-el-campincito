@@ -759,7 +759,7 @@ app.delete('/schedule/remove', (req, res, next) => {
 
 
 app.get('/*', function(req, res) {
-    res.sendFile(__dirname +'../client/public/index.html');
+    res.sendFile('/client/public/index.html');
 })
 
 module.exports = app;
